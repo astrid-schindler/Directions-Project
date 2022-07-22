@@ -1,10 +1,12 @@
+# LISTS
 directions_list1 = ["NORDEN", "OSTEN", "WESTEN", "SUEDEN", "WESTEN", "WESTEN", "NORDEN"]
-
 directions_list2 = ["SUEDEN", "NORDEN", "SUEDEN", "WESTEN", "WESTEN", "OSTEN", "NORDEN", "NORDEN", "OSTEN", "OSTEN"]
 
 
+# FUNCTION REMOVES SENSELESS DIRECTIONS
 def solve(directions):
 
+    # REMOVES HORIZONTAL DIRECTIONS
     for i in directions:
         if i == "NORDEN":
             for j in directions:
@@ -12,6 +14,7 @@ def solve(directions):
                     directions.remove("NORDEN")
                     directions.remove("SUEDEN")
 
+    # REMOVES VERTICAL DIRECTIONS
     for k in directions:
         if k == "OSTEN":
             for m in directions:
@@ -22,4 +25,5 @@ def solve(directions):
     return directions
 
 
-print(solve(directions_list2))
+# TESTING FUNCTION
+print(solve(directions_list1))
