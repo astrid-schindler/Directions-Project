@@ -22,4 +22,4 @@ def solve(directions):
     return directions
 
 
-print(solve(directions_list1))
+print(solve(directions_list2))
