@@ -5,24 +5,21 @@ directions_list2 = ["SUEDEN", "NORDEN", "SUEDEN", "WESTEN", "WESTEN", "OSTEN", "
 
 def solve(directions):
 
-    norden = "NORDEN"
-    sueden = "SUEDEN"
-    osten = "OSTEN"
-    westen = "WESTEN"
-
     for i in directions:
-        if i == norden:
+        if i == "NORDEN":
             for j in directions:
-                if j == sueden:
-                    directions.remove(norden)
-                    directions.remove(sueden)
+                if j == "SUEDEN":
+                    directions.remove("NORDEN")
+                    directions.remove("SUEDEN")
 
     for j in directions:
-        if j == osten:
+        if j == "OSTEN":
             for j in directions:
-                if j == westen:
-                    directions.remove(osten)
-                    directions.remove(westen)
+                if j == "WESTEN":
+                    directions.remove("OSTEN")
+                    directions.remove("WESTEN")
 
     return directions
 
+
+print(solve(directions_list2))
