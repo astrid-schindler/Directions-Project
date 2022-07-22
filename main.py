@@ -12,14 +12,14 @@ def solve(directions):
                     directions.remove("NORDEN")
                     directions.remove("SUEDEN")
 
-    for j in directions:
-        if j == "OSTEN":
-            for j in directions:
-                if j == "WESTEN":
+    for k in directions:
+        if k == "OSTEN":
+            for m in directions:
+                if m == "WESTEN":
                     directions.remove("OSTEN")
                     directions.remove("WESTEN")
 
     return directions
 
 
-print(solve(directions_list2))
+print(solve(directions_list1))
