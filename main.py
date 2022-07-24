@@ -1,8 +1,11 @@
+# Imports
 import itertools as itool
 
 # LISTS
 directions_list1 = ["NORDEN", "OSTEN",  "WESTEN", "SUEDEN", "WESTEN", "WESTEN", "NORDEN"]
-directions_list2 = ["SUEDEN", "NORDEN", "SUEDEN", "WESTEN", "WESTEN", "OSTEN", "NORDEN", "NORDEN", "OSTEN", "OSTEN"]
+directions_list2 = ["SUEDEN", "NORDEN", "SUEDEN", "WESTEN", "NORDEN", "NORDEN", "WESTEN",
+                    "OSTEN", "NORDEN", "NORDEN", "SUEDEN", "OSTEN", "OSTEN", "SUEDEN",
+                    ]
 
 
 # FUNCTION REMOVES SENSELESS DIRECTIONS
@@ -25,7 +28,6 @@ def solve(directions):
                     directions.remove("WESTEN")
 
     return directions
-
 
 
 # FUNCTION COUNTS DIRECTIONS
@@ -53,16 +55,12 @@ def solve_second(directions_second):
     else:
         directions_second.append(abs_ver * ["WESTEN"])
 
+    # REMOVES LISTS IN LISTS
     directions_second = list(itool.chain(*directions_second))
 
     return directions_second
 
 
-# TESTING FUNCTIONS
-print(directions_list1)
-print(solve_second(directions_list1))
-
-=======
 # REMOVES SIDE BY SIDE PAIRS
 def solve_third(directions_third):
 
@@ -89,4 +87,3 @@ def solve_third(directions_third):
 
 # TESTING FUNCTION
 print(solve(directions_list2))
-
