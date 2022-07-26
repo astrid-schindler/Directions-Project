@@ -63,23 +63,27 @@ def solve_second(directions_second):
 
 # REMOVES SIDE BY SIDE PAIRS
 def solve_third(directions_third):
+
     for idx_a, a in enumerate(directions_third):
-        idx_plus = idx_a + 2
+
         if a == "NORDEN" and ((idx_a + 1) < len(directions_third)) and directions_third[idx_a + 1] == "SUEDEN":
-            del directions_third[idx_a:idx_plus]
+            del directions_third[idx_a:idx_a + 2]
             solve_third(directions_third)
+
         elif a == "SUEDEN" and ((idx_a + 1) < len(directions_third)) and directions_third[idx_a + 1] == "NORDEN":
-            del directions_third[idx_a:idx_plus]
+            del directions_third[idx_a:idx_a + 2]
             solve_third(directions_third)
+
         elif a == "OSTEN" and ((idx_a + 1) < len(directions_third)) and directions_third[idx_a + 1] == "WESTEN":
-            del directions_third[idx_a:idx_plus]
+            del directions_third[idx_a:idx_a + 2]
             solve_third(directions_third)
+
         elif a == "WESTEN" and ((idx_a + 1) < len(directions_third)) and directions_third[idx_a + 1] == "OSTEN":
-            del directions_third[idx_a:idx_plus]
+            del directions_third[idx_a:idx_a + 2]
             solve_third(directions_third)
 
     return directions_third
 
 
 # TESTING FUNCTION
-print(solve_third(directions_list2))
+print(solve_third(directions_list1))
